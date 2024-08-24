@@ -574,23 +574,26 @@ function changeImg() {
   const imageElement = document.querySelector('.image');
   let currentImageIndex = parseInt(imageElement.dataset.imageIndex) || 1; // Get current index or set default to 1
 
-  // Improved cyclical update with clear handling of 3 images:
-  currentImageIndex = (currentImageIndex + 1) % 4; // Cycle through 1, 2, 3, 1
+  // Начальное значение индекса изображения
+let currentImageIndex = 0;
 
-  // Update data attribute for future reference:
-  imageElement.dataset.imageIndex = currentImageIndex;
+// Список URL изображений
+const imageSources = [
+  'url(other/photo.jpg)',
+  'url(other/photo2.jpg)',
+  'url(other/photo3.jpg)',
+  'url(other/photo4.jpg)'
+];
 
-  // Clearer and more efficient image source logic:
-  const imageSources = [
-    'url(other/photo.jpg)',
-    'url(other/photo2.jpg)',
-    'url(other/photo3.jpg)',
-    'url(other/photo4.jpg)'
-  ];
-  const imageSource = imageSources[currentImageIndex - 1]; // Access by index directly
+// Функция для смены изображения
+function changeImage() {
+  // Увеличиваем индекс изображения с циклическим переходом
+  currentImageIndex = (currentImageIndex + 1) % 4;
 
-  // Update background image style:
-  imageElement.style.backgroundImage = imageSource;
+  // Обновляем стиль фона с новым изображением
+  imageElement.style.backgroundImage = imageSources[currentImageIndex];
+}
+    
 }
 </script>
     <script src="other/access/swiper-bundle.js?662250"></script>
