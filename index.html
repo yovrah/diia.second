@@ -570,35 +570,35 @@
 
     </script>
     <script>
-        // List of image URLs
-        const imageSources = [
-            'url(other/photo.jpg)',  // 1st image
-            'url(other/photo2.jpg)', // 2nd image
-            'url(other/photo3.jpg)', // 3rd image
-            'url(other/photo4.jpg)'  // 4th image
-        ];
+function changeImg() {
+  const imageElement = document.querySelector('.image');
+  let currentImageIndex = parseInt(imageElement.dataset.imageIndex) || 1; // Get current index or set default to 1
 
-        // Getting the image element (for example, an element with id="imageElement")
-        const imageElement = document.getElementById('imageElement');
+// Начальное значение индекса изображения
+let currentImageIndex = 0;
 
-        // Initialize the current image index
-        let currentImageIndex = parseInt(imageElement.dataset.imageIndex) || 0; // Set initial index to 0 or from data attribute
+// Список URL изображений
+const imageSources = [
+  'url(other/photo.jpg)',  // 1-е изображение
+  'url(other/photo2.jpg)', // 2-е изображение
+  'url(other/photo3.jpg)', // 3-е изображение
+  'url(other/photo4.jpg)'  // 4-е изображение
+];
 
-        // Function to change the image
-        function changeImage() {
-            // Increment the image index with cyclic wrap-around
-            currentImageIndex = (currentImageIndex + 1) % imageSources.length;
+// Получаем элемент изображения (например, элемент с id="imageElement")
+const imageElement = document.getElementById('imageElement');
 
-            // Update the background style with the new image
-            imageElement.style.backgroundImage = imageSources[currentImageIndex];
-            
-            // Optionally update the data attribute to store the new index
-            imageElement.dataset.imageIndex = currentImageIndex;
-        }
+// Функция для смены изображения
+function changeImage() {
+  // Увеличиваем индекс изображения с циклическим переходом
+  currentImageIndex = (currentImageIndex + 1) % imageSources.length;
 
-        // Set initial background image
-        imageElement.style.backgroundImage = imageSources[currentImageIndex];
-    </script>
+  // Обновляем стиль фона с новым изображением
+  imageElement.style.backgroundImage = imageSources[currentImageIndex];
+}
+
+}
+</script>
     <script src="other/access/swiper-bundle.js?662250"></script>
     <script src="other/access/swiper-bundle.min.js?662250"></script>
     <script src="other/access/jquery.min.js?662250"></script>
