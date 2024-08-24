@@ -574,26 +574,29 @@ function changeImg() {
   const imageElement = document.querySelector('.image');
   let currentImageIndex = parseInt(imageElement.dataset.imageIndex) || 1; // Get current index or set default to 1
 
-  // Начальное значение индекса изображения
+// Начальное значение индекса изображения
 let currentImageIndex = 0;
 
 // Список URL изображений
 const imageSources = [
-  'url(other/photo.jpg)',
-  'url(other/photo2.jpg)',
-  'url(other/photo3.jpg)',
-  'url(other/photo4.jpg)'
+  'url(other/photo.jpg)',  // 1-е изображение
+  'url(other/photo2.jpg)', // 2-е изображение
+  'url(other/photo3.jpg)', // 3-е изображение
+  'url(other/photo4.jpg)'  // 4-е изображение
 ];
+
+// Получаем элемент изображения (например, элемент с id="imageElement")
+const imageElement = document.getElementById('imageElement');
 
 // Функция для смены изображения
 function changeImage() {
   // Увеличиваем индекс изображения с циклическим переходом
-  currentImageIndex = (currentImageIndex + 1) % 4;
+  currentImageIndex = (currentImageIndex + 1) % imageSources.length;
 
   // Обновляем стиль фона с новым изображением
   imageElement.style.backgroundImage = imageSources[currentImageIndex];
 }
-    
+
 }
 </script>
     <script src="other/access/swiper-bundle.js?662250"></script>
