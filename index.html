@@ -575,7 +575,7 @@ function changeImg() {
   let currentImageIndex = parseInt(imageElement.dataset.imageIndex) || 1; // Get current index or set default to 1
 
   // Improved cyclical update with clear handling of 3 images:
-  currentImageIndex = (currentImageIndex + 1) % 5; // Cycle through 1, 2, 3, 1
+  currentImageIndex = (currentImageIndex + 1) % 6; // Cycle through 1, 2, 3, 1
 
   // Update data attribute for future reference:
   imageElement.dataset.imageIndex = currentImageIndex;
@@ -585,7 +585,8 @@ function changeImg() {
     'url(other/photo.jpg)',
     'url(other/photo2.jpg)',
     'url(other/photo3.jpg)',
-    'url(other/photo4.jpg)'
+    'url(other/photo4.jpg)',
+    'url(other/photo5.jpg)'
   ];
   const imageSource = imageSources[currentImageIndex - 1]; // Access by index directly
 
