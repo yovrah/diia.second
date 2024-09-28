@@ -3,12 +3,12 @@ var isRightsEnabled = false; // Права
 var isCovidCertificateEnabled = true; // COVID-сертификат
 
 // Общее
-var birthdate = "22.12.2005"; // Дата рождения
-var fullname = "Ангелов Владислав Юрійович" // ФИО
-var name = "Владислав" // Имя
+var birthdate = "12.08.2006"; // Дата рождения
+var fullname = "Андрей Вавилов Александрович" // ФИО
+var name = "Андрей" // Имя
 
 // Паспорт
-var passport_id = "126526789" // Номер паспорта
+var passport_id = "126573732" // Номер паспорта
 
 // КПП
 var kpp_id = "126526789" // ИНН
